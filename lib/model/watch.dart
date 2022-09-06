@@ -1,8 +1,12 @@
 import 'package:flutter_rm/model/enums.dart';
 import 'package:flutter_rm/model/location.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'watch.g.dart';
+
+@JsonSerializable()
 class Watch {
-  String id;
+  String id; // this should be nullable  (but why????)
   bool isNotificationsEnabled;
   bool onlyPolisWithPictures;
   String nameSpace;
@@ -10,6 +14,7 @@ class Watch {
   String name;
   AssignmentTypes assignmentType;
   List<EstateTypes> estateTypes;
+  @JsonKey(fromJson: _fromJson, toJson: _toJson)
   DateTime createTime;
   int? minPrice;
   int? maxPrice;
@@ -35,6 +40,13 @@ class Watch {
     required this.assignmentType,
     required this.estateTypes,
   });
+
+  factory Watch.fromJson(Map<String, dynamic> json) => _$WatchFromJson(json);
+  Map<String, dynamic> toJson() => _$WatchToJson(this);
+
+  static DateTime _fromJson(int int) =>
+      DateTime.fromMillisecondsSinceEpoch(int);
+  static int _toJson(DateTime time) => time.millisecondsSinceEpoch;
 
   //   this is probably not the best way to do this, but it'll do for now
   String get price {
