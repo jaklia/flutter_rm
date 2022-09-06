@@ -22,6 +22,8 @@ class MockData {
       estateTypes: [EstateTypes.flat],
       minFloorArea: 40,
       maxFloorArea: 80,
+      isNotificationEnabled: true,
+      onlyPolisWithPictures: true,
     ),
     Watch(
       id: 'abc2',
@@ -41,6 +43,8 @@ class MockData {
       minPrice: 69000000,
       maxPrice: 420000000,
       minFloorArea: 80,
+      isNotificationEnabled: false,
+      onlyPolisWithPictures: true,
     ),
     Watch(
       id: 'abc3',
@@ -70,6 +74,8 @@ class MockData {
       assignmentType: AssignmentTypes.forSale,
       estateTypes: [EstateTypes.flat],
       maxFloorArea: 60,
+      isNotificationEnabled: true,
+      onlyPolisWithPictures: true,
     ),
     Watch(
       id: 'abc4',
@@ -86,6 +92,8 @@ class MockData {
       ],
       assignmentType: AssignmentTypes.forSale,
       estateTypes: [EstateTypes.flat, EstateTypes.house],
+      isNotificationEnabled: false,
+      onlyPolisWithPictures: true,
     ),
   ];
 }

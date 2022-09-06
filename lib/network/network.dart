@@ -17,7 +17,7 @@ class Network {
       );
       if (kDebugMode) {
         _dio!.interceptors.add(
-          LogInterceptor(),
+          LogInterceptor(responseBody: true),
         );
       }
     }

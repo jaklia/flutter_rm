@@ -7,7 +7,7 @@ part 'watch.g.dart';
 @JsonSerializable()
 class Watch {
   String id; // this should be nullable  (but why????)
-  bool isNotificationsEnabled;
+  bool isNotificationEnabled;
   bool onlyPolisWithPictures;
   String nameSpace;
   List<Location> locations;
@@ -26,8 +26,8 @@ class Watch {
   Watch({
     required this.id,
     required this.name,
-    this.isNotificationsEnabled = true,
-    this.onlyPolisWithPictures = true,
+    required this.isNotificationEnabled,
+    required this.onlyPolisWithPictures,
     required this.createTime,
     required this.nameSpace,
     required this.locations,

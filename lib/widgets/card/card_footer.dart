@@ -22,7 +22,9 @@ class CardFooter extends StatelessWidget {
           padding: const EdgeInsets.all(0),
           iconSize: 36,
           onPressed: () {},
-          icon: const Icon(Icons.notifications),
+          icon: Icon(watch.isNotificationEnabled
+              ? Icons.notifications
+              : Icons.notifications_off_rounded),
         ),
         IconButton(
           padding: const EdgeInsets.all(0),

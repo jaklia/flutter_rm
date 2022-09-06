@@ -9,8 +9,8 @@ part of 'watch.dart';
 Watch _$WatchFromJson(Map<String, dynamic> json) => Watch(
       id: json['id'] as String,
       name: json['name'] as String,
-      isNotificationsEnabled: json['isNotificationsEnabled'] as bool? ?? true,
-      onlyPolisWithPictures: json['onlyPolisWithPictures'] as bool? ?? true,
+      isNotificationEnabled: json['isNotificationEnabled'] as bool,
+      onlyPolisWithPictures: json['onlyPolisWithPictures'] as bool,
       createTime: Watch._fromJson(json['createTime'] as int),
       nameSpace: json['nameSpace'] as String,
       locations: (json['locations'] as List<dynamic>)
@@ -31,7 +31,7 @@ Watch _$WatchFromJson(Map<String, dynamic> json) => Watch(
 
 Map<String, dynamic> _$WatchToJson(Watch instance) => <String, dynamic>{
       'id': instance.id,
-      'isNotificationsEnabled': instance.isNotificationsEnabled,
+      'isNotificationEnabled': instance.isNotificationEnabled,
       'onlyPolisWithPictures': instance.onlyPolisWithPictures,
       'nameSpace': instance.nameSpace,
       'locations': instance.locations,
