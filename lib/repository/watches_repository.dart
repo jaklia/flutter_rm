@@ -1,4 +1,4 @@
-import 'package:flutter_rm/data/watches_api_provider.dart';
+import 'package:flutter_rm/provider/watches_api_provider.dart';
 
 import '../model/watch.dart';
 
