@@ -26,11 +26,15 @@ class CardHeader extends StatelessWidget {
             ],
           ),
         ),
-        const Expanded(
+        Expanded(
           flex: 1,
           child: Text(
             "lorem ipsum dolor sit amet",
             textAlign: TextAlign.center,
+            style: Theme.of(context)
+                .textTheme
+                .bodyText2!
+                .copyWith(color: Colors.orange),
           ),
         )
       ],
