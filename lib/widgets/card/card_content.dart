@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
 
+import '../../model/watch.dart';
 import 'info_row.dart';
 
 class CardContent extends StatelessWidget {
-  const CardContent({super.key});
+  final Watch watch;
+  const CardContent({super.key, required this.watch});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blueGrey.withOpacity(0.1),
       child: Column(
-        children: const [
+        children: [
           InfoRow(
-            data:
-                "location, location, location, location, location, location, location",
+            data: watch.locationStr,
           ),
-          Divider(height: 1),
+          const Divider(height: 1),
           InfoRow(
-            title: "price",
-            data: "asd asd",
+            title: "Price",
+            data: watch.price,
           ),
-          Divider(height: 1),
+          const Divider(height: 1),
           InfoRow(
-            title: "area",
-            data: "asd asd",
+            title: "Area",
+            data: watch.area,
           ),
         ],
       ),

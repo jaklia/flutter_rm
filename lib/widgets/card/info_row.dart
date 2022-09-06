@@ -13,7 +13,7 @@ class InfoRow extends StatelessWidget {
         horizontal: 20,
         vertical: 16,
       ),
-      child: title == null ? renderOneItem() : renderTwoItems(),
+      child: title == null ? renderOneItem() : renderTwoItems(context),
     );
   }
 
@@ -31,12 +31,14 @@ class InfoRow extends StatelessWidget {
     );
   }
 
-  Widget renderTwoItems() {
+  Widget renderTwoItems(BuildContext context) {
     return Row(
       children: [
         Expanded(
           flex: 4,
-          child: Text(title!),
+          child: Text(
+            title!,
+          ),
         ),
         Expanded(
           flex: 6,

@@ -35,4 +35,48 @@ class Watch {
     required this.assignmentType,
     required this.estateTypes,
   });
+
+  //   this is probably not the best way to do this, but it'll do for now
+  String get price {
+    if (maxPrice == null) {
+      if (minPrice == null) {
+        return '0+ HUF';
+      }
+      return '$minPrice+ HUF';
+    }
+    if (minPrice == null) {
+      return '0 - $maxPrice HUF';
+    }
+    return '$minPrice - $maxPrice HUF';
+  }
+
+  String get assignmentTypeStr {
+    if (assignmentType == AssignmentTypes.forSale) {
+      return 'for sale';
+    }
+    return 'to let';
+  }
+
+  String get estateTypeStr {
+    return estateTypes
+        .map((e) => e == EstateTypes.flat ? 'flat' : 'house')
+        .join(', ');
+  }
+
+  String get area {
+    if (maxFloorArea == null) {
+      if (minFloorArea == null) {
+        return '0+ m2';
+      }
+      return '$minFloorArea+ m2';
+    }
+    if (minFloorArea == null) {
+      return '0 - $maxFloorArea m2';
+    }
+    return '$minFloorArea - $maxFloorArea m2';
+  }
+
+  String get locationStr {
+    return locations.map((e) => e.adminLevels[8]).join(', ');
+  }
 }

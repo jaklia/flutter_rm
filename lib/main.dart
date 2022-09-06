@@ -28,7 +28,9 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
-          iconTheme: IconThemeData(color: Colors.indigo[900]),
+          iconTheme: const IconThemeData(
+            color: Color.fromRGBO(13, 49, 107, 1),
+          ),
         ),
         home: const HomePage(),
       ),

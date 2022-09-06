@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rm/widgets/card/card_footer.dart';
 
+import '../../model/watch.dart';
 import 'card_content.dart';
+import 'card_footer.dart';
 import 'card_header.dart';
 
 class WatchCard extends StatelessWidget {
-  const WatchCard({super.key});
+  final Watch watch;
+  const WatchCard({super.key, required this.watch});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +21,12 @@ class WatchCard extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.all(16),
         child: Column(
-          children: const [
-            CardHeader(),
-            SizedBox(height: 16),
-            CardContent(),
-            CardFooter(),
+          children: [
+            CardHeader(watch: watch),
+            const SizedBox(height: 16),
+            CardContent(watch: watch),
+            const SizedBox(height: 8),
+            CardFooter(watch: watch),
           ],
         ),
       ),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../model/watch.dart';
+
 class CardHeader extends StatelessWidget {
-  const CardHeader({super.key});
+  final Watch watch;
+  const CardHeader({super.key, required this.watch});
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +16,11 @@ class CardHeader extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Title",
+                watch.name,
                 style: Theme.of(context).textTheme.headline6,
               ),
               Text(
-                "subtitle",
+                '${watch.estateTypeStr} ${watch.assignmentTypeStr}',
                 style: Theme.of(context).textTheme.subtitle1,
               ),
             ],

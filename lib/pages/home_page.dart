@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 itemCount: state.watches.length,
                 itemBuilder: (context, idx) {
-                  return const WatchCard();
+                  return WatchCard(watch: state.watches[idx]);
                 },
               );
             case WatchListStatus.fail:

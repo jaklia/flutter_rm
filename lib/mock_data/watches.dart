@@ -20,6 +20,8 @@ class MockData {
       ],
       assignmentType: AssignmentTypes.toLet,
       estateTypes: [EstateTypes.flat],
+      minFloorArea: 40,
+      maxFloorArea: 80,
     ),
     Watch(
       id: 'abc2',
@@ -38,6 +40,7 @@ class MockData {
       estateTypes: [EstateTypes.house],
       minPrice: 69000000,
       maxPrice: 420000000,
+      minFloorArea: 80,
     ),
     Watch(
       id: 'abc3',
@@ -66,6 +69,7 @@ class MockData {
       ],
       assignmentType: AssignmentTypes.forSale,
       estateTypes: [EstateTypes.flat],
+      maxFloorArea: 60,
     ),
     Watch(
       id: 'abc4',
