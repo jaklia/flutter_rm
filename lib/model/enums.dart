@@ -1,3 +1,15 @@
-enum AssignmentTypes { forSale, toLet }
+import 'package:json_annotation/json_annotation.dart';
 
-enum EstateTypes { flat, house }
+enum AssignmentTypes {
+  @JsonValue('FOR_SALE')
+  forSale,
+  @JsonValue('TO_LET')
+  toLet,
+}
+
+enum EstateTypes {
+  @JsonValue('FLAT')
+  flat,
+  @JsonValue('HOUSE')
+  house,
+}

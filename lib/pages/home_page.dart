@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rm/bloc/watches_bloc.dart';
+import 'package:flutter_rm/bloc/watches_event.dart';
 import 'package:flutter_rm/repository/watches_repository.dart';
 
 import '../bloc/watches_state.dart';
@@ -25,12 +26,16 @@ class HomePage extends StatelessWidget {
                 child: Text('loading . . .'),
               );
             case WatchListStatus.success:
-              return ListView.builder(
-                padding: const EdgeInsets.all(8),
-                itemCount: state.watches.length,
-                itemBuilder: (context, idx) {
-                  return WatchCard(watch: state.watches[idx]);
-                },
+              return RefreshIndicator(
+                onRefresh: () async => BlocProvider.of<WatchListBloc>(context)
+                    .add(const WatchListRequested()),
+                child: ListView.builder(
+                  padding: const EdgeInsets.all(8),
+                  itemCount: state.watches.length,
+                  itemBuilder: (context, idx) {
+                    return WatchCard(watch: state.watches[idx]);
+                  },
+                ),
               );
             case WatchListStatus.fail:
               return const Center(
