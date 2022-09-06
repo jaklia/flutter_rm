@@ -50,16 +50,18 @@ class Watch {
 
   //   this is probably not the best way to do this, but it'll do for now
   String get price {
-    if (maxPrice == null) {
-      if (minPrice == null) {
-        return '0+ HUF';
-      }
-      return '$minPrice+ HUF';
+    var currency = 'HUF';
+    var divider = (assignmentType == AssignmentTypes.forSale) ? 1000000 : 1000;
+    var value =
+        (assignmentType == AssignmentTypes.forSale) ? 'million' : 'thousand';
+
+    var minStr = (minPrice != null) ? (minPrice! ~/ divider).toString() : '0';
+    var maxStr = (maxPrice != null) ? (maxPrice! ~/ divider).toString() : '';
+
+    if (maxStr == '') {
+      return '$minStr+ $value $currency';
     }
-    if (minPrice == null) {
-      return '0 - $maxPrice HUF';
-    }
-    return '$minPrice - $maxPrice HUF';
+    return '$minStr - $maxStr $value $currency';
   }
 
   String get assignmentTypeStr {
