@@ -13,7 +13,19 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Watches'),
+      ),
+      drawer: Drawer(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Icon(Icons.person),
+            Text('nothing to see here'),
+            Text('just added the drawer'),
+          ],
+        ),
+      ),
       body: BlocBuilder<WatchListBloc, WatchListState>(
         builder: (context, state) {
           switch (state.status) {
