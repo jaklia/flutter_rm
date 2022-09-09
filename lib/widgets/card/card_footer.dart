@@ -12,6 +12,8 @@ class CardFooter extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        // this should be in a separate widget,
+        //  now need to set the same stuff 3 times
         IconButton(
           padding: const EdgeInsets.all(0),
           iconSize: 36,

@@ -23,7 +23,7 @@ class CardContent extends StatelessWidget {
           ),
           const Divider(height: 1),
           InfoRow(
-            title: "Area",
+            title: "Floor area",
             data: watch.area,
           ),
         ],

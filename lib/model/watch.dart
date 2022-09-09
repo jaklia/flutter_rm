@@ -73,7 +73,7 @@ class Watch {
 
   String get estateTypeStr {
     return estateTypes
-        .map((e) => e == EstateTypes.flat ? 'flat' : 'house')
+        .map((e) => e == EstateTypes.flat ? 'Flat' : 'House')
         .join(', ');
   }
 

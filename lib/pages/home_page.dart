@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_rm/bloc/watches_bloc.dart';
-import 'package:flutter_rm/bloc/watches_event.dart';
-import 'package:flutter_rm/repository/watches_repository.dart';
 
+import '../bloc/watches_bloc.dart';
+import '../bloc/watches_event.dart';
 import '../bloc/watches_state.dart';
 import '../widgets/card/watch_card.dart';
 
@@ -42,7 +41,7 @@ class HomePage extends StatelessWidget {
                 onRefresh: () async => BlocProvider.of<WatchListBloc>(context)
                     .add(const WatchListRequested()),
                 child: ListView.builder(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(12),
                   itemCount: state.watches.length,
                   itemBuilder: (context, idx) {
                     return WatchCard(watch: state.watches[idx]);
