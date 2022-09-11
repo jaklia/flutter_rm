@@ -9,17 +9,23 @@ class CardHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 30,
+        vertical: 20,
+      ),
       child: Row(
         children: [
           Expanded(
-            flex: 2,
+            flex: 3,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  watch.name,
-                  style: Theme.of(context).textTheme.headline6,
+                FittedBox(
+                  child: Text(
+                    watch.name,
+                    style: Theme.of(context).textTheme.headline6,
+                    maxLines: 1,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -30,7 +36,7 @@ class CardHeader extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Text(
               watch.isNotificationEnabled
                   ? 'lorem ipsum dolor sit amet'
