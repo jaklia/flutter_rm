@@ -38,11 +38,16 @@ class InfoRow extends StatelessWidget {
           flex: 4,
           child: Text(
             title!,
+            style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                  color: const Color.fromRGBO(0, 55, 103, 1),
+                ),
           ),
         ),
         Expanded(
           flex: 6,
-          child: Text(data),
+          child: Text(
+            data,
+          ),
         ),
       ],
     );

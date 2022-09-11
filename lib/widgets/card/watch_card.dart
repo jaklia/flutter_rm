@@ -20,13 +20,18 @@ class WatchCard extends StatelessWidget {
       ),
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.only(
+          top: 20,
+          left: 20,
+          right: 20,
+          bottom: 8,
+        ),
         child: Column(
           children: [
             CardHeader(watch: watch),
             const SizedBox(height: 16),
             CardContent(watch: watch),
-            const SizedBox(height: 8),
+            const SizedBox(height: 10),
             CardFooter(watch: watch),
           ],
         ),

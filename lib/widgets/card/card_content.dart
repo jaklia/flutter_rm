@@ -10,18 +10,18 @@ class CardContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueGrey.withOpacity(0.1),
+      color: const Color.fromRGBO(243, 246, 250, 1),
       child: Column(
         children: [
           InfoRow(
             data: watch.locationStr,
           ),
-          const Divider(height: 1),
+          const Divider(height: 1, thickness: 1),
           InfoRow(
             title: "Price",
             data: watch.price,
           ),
-          const Divider(height: 1),
+          const Divider(height: 1, thickness: 1),
           InfoRow(
             title: "Floor area",
             data: watch.area,
