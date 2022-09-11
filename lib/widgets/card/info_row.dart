@@ -38,7 +38,7 @@ class InfoRow extends StatelessWidget {
           flex: 4,
           child: Text(
             title!,
-            style: Theme.of(context).textTheme.bodyText2?.copyWith(
+            style: Theme.of(context).textTheme.subtitle1?.copyWith(
                   color: const Color.fromRGBO(0, 55, 103, 1),
                 ),
           ),
