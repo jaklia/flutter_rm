@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rm/constants/colors.dart';
 
 import '../../model/watch.dart';
 
@@ -45,7 +46,7 @@ class CardHeader extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .bodyText2
-                  ?.copyWith(color: Colors.orange),
+                  ?.copyWith(color: AppColors.cardNotificationText),
             ),
           )
         ],

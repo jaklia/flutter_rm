@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rm/constants/colors.dart';
 
 import '../../model/watch.dart';
 import 'info_row.dart';
@@ -11,7 +12,7 @@ class CardContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 24),
-      color: const Color.fromRGBO(243, 246, 250, 1),
+      color: AppColors.cardContentBg,
       child: Column(
         children: [
           InfoRow(

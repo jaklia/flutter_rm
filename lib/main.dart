@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rm/bloc/watches_bloc.dart';
 import 'package:flutter_rm/bloc/watches_event.dart';
+import 'package:flutter_rm/constants/colors.dart';
 import 'package:flutter_rm/repository/watches_repository.dart';
 import 'package:flutter_rm/pages/home_page.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           fontFamily: 'Inter',
           iconTheme: const IconThemeData(
-            color: Color.fromRGBO(0, 55, 103, 1),
+            color: AppColors.cardIcon,
           ),
           // textTheme: ThemeData.light().textTheme,
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rm/constants/colors.dart';
 
 class InfoRow extends StatelessWidget {
   final String? title;
@@ -39,7 +40,7 @@ class InfoRow extends StatelessWidget {
           child: Text(
             title!,
             style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                  color: const Color.fromRGBO(0, 55, 103, 1),
+                  color: AppColors.infoRowTitle,
                 ),
           ),
         ),
