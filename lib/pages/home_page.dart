@@ -33,21 +33,34 @@ class HomePage extends StatelessWidget {
                 child: Text('init'),
               );
             case WatchListStatus.loading:
-              return const Center(
-                child: Text('loading . . .'),
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  CircularProgressIndicator(),
+                  SizedBox(height: 20),
+                  Center(
+                    child: Text('Loading . . .'),
+                  ),
+                ],
               );
             case WatchListStatus.success:
-              return RefreshIndicator(
-                onRefresh: () async => BlocProvider.of<WatchListBloc>(context)
-                    .add(const WatchListRequested()),
-                child: ListView.builder(
-                  padding: const EdgeInsets.all(12),
-                  itemCount: state.watches.length,
-                  itemBuilder: (context, idx) {
-                    return WatchCard(watch: state.watches[idx]);
-                  },
-                ),
-              );
+              if (state.watches.isEmpty) {
+                return const Center(
+                  child: Text('No watches'),
+                );
+              } else {
+                return RefreshIndicator(
+                  onRefresh: () async => BlocProvider.of<WatchListBloc>(context)
+                      .add(const WatchListRequested()),
+                  child: ListView.builder(
+                    padding: const EdgeInsets.all(12),
+                    itemCount: state.watches.length,
+                    itemBuilder: (context, idx) {
+                      return WatchCard(watch: state.watches[idx]);
+                    },
+                  ),
+                );
+              }
             case WatchListStatus.fail:
               return const Center(
                 child: Text('error'),
@@ -59,15 +72,6 @@ class HomePage extends StatelessWidget {
           }
         },
       ),
-      // ListView(
-      //   padding: const EdgeInsets.all(8),
-      //   children: [
-      //     WatchCard(),
-      //     WatchCard(),
-      //     WatchCard(),
-      //     WatchCard(),
-      //   ],
-      // ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.add),
