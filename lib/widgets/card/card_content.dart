@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/colors.dart';
+import '../../constants/strings.dart';
 import '../../model/watch.dart';
 import 'info_row.dart';
 
@@ -11,7 +13,7 @@ class CardContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 24),
-      color: const Color.fromRGBO(243, 246, 250, 1),
+      color: AppColors.cardContentBg,
       child: Column(
         children: [
           InfoRow(
@@ -19,12 +21,12 @@ class CardContent extends StatelessWidget {
           ),
           const Divider(height: 1, thickness: 1),
           InfoRow(
-            title: "Price",
+            title: Strings.price,
             data: watch.price,
           ),
           const Divider(height: 1, thickness: 1),
           InfoRow(
-            title: "Floor area",
+            title: Strings.floorArea,
             data: watch.area,
           ),
         ],

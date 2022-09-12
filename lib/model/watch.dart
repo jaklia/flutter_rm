@@ -49,6 +49,7 @@ class Watch {
   static int _toJson(DateTime time) => time.millisecondsSinceEpoch;
 
   //   this is probably not the best way to do this, but it'll do for now
+  //  TODO: probably a new class for these formatter things below
   String get price {
     var currency = 'HUF';
     var divider = (assignmentType == AssignmentTypes.forSale) ? 1000000 : 1000;

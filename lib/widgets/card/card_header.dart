@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rm/constants/colors.dart';
 
+import '../../constants/strings.dart';
 import '../../model/watch.dart';
 
 class CardHeader extends StatelessWidget {
@@ -23,7 +25,10 @@ class CardHeader extends StatelessWidget {
                 FittedBox(
                   child: Text(
                     watch.name,
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6
+                        ?.copyWith(fontWeight: FontWeight.w700),
                     maxLines: 1,
                   ),
                 ),
@@ -39,13 +44,13 @@ class CardHeader extends StatelessWidget {
             flex: 2,
             child: Text(
               watch.isNotificationEnabled
-                  ? 'lorem ipsum dolor sit amet'
-                  : 'Notifications are muted',
+                  ? Strings.notificationText
+                  : Strings.notificationsMuted,
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
                   .bodyText2
-                  ?.copyWith(color: Colors.orange),
+                  ?.copyWith(color: AppColors.cardNotificationText),
             ),
           )
         ],
