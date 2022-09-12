@@ -41,6 +41,7 @@ class InfoRow extends StatelessWidget {
             title!,
             style: Theme.of(context).textTheme.subtitle1?.copyWith(
                   color: AppColors.infoRowTitle,
+                  fontSize: 15,
                 ),
           ),
         ),

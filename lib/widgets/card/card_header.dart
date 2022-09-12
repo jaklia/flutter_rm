@@ -24,7 +24,10 @@ class CardHeader extends StatelessWidget {
                 FittedBox(
                   child: Text(
                     watch.name,
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6
+                        ?.copyWith(fontWeight: FontWeight.w700),
                     maxLines: 1,
                   ),
                 ),
