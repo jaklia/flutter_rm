@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rm/constants/colors.dart';
 
+import '../../constants/colors.dart';
+import '../../constants/strings.dart';
 import '../../model/watch.dart';
 import 'info_row.dart';
 
@@ -20,12 +21,12 @@ class CardContent extends StatelessWidget {
           ),
           const Divider(height: 1, thickness: 1),
           InfoRow(
-            title: "Price",
+            title: Strings.price,
             data: watch.price,
           ),
           const Divider(height: 1, thickness: 1),
           InfoRow(
-            title: "Floor area",
+            title: Strings.floorArea,
             data: watch.area,
           ),
         ],
