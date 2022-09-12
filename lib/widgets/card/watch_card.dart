@@ -18,20 +18,12 @@ class WatchCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         side: BorderSide(color: Theme.of(context).dividerColor),
       ),
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
-        // padding: const EdgeInsets.only(
-        //   top: 20,
-        //   left: 20,
-        //   right: 20,
-        //   bottom: 8,
-        // ),
         child: Column(
           children: [
             CardHeader(watch: watch),
-            //const SizedBox(height: 16),
             CardContent(watch: watch),
-            //const SizedBox(height: 10),
             CardFooter(watch: watch),
           ],
         ),

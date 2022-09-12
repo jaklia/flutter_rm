@@ -17,13 +17,11 @@ class CardFooter extends StatelessWidget {
           // this should be in a separate widget,
           //  now need to set the same stuff 3 times
           IconButton(
-            //padding: const EdgeInsets.all(0),
             iconSize: 36,
             onPressed: () {},
             icon: const Icon(Icons.delete_rounded),
           ),
           IconButton(
-            //padding: const EdgeInsets.all(0),
             iconSize: 36,
             onPressed: () {},
             icon: Icon(watch.isNotificationEnabled
@@ -31,7 +29,6 @@ class CardFooter extends StatelessWidget {
                 : Icons.notifications_off_rounded),
           ),
           IconButton(
-            //padding: const EdgeInsets.all(0),
             iconSize: 36,
             onPressed: () {},
             icon: const Icon(Icons.edit_rounded),

@@ -8,6 +8,7 @@ class Strings {
   static const huf = 'HUF';
   static const m2 = 'm2';
 
+  static const watches = 'Watches';
   static const price = 'Price';
   static const floorArea = 'Floor area';
   static const notificationsMuted = 'Notifications are muted';

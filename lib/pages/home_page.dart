@@ -5,6 +5,7 @@ import '../bloc/watches_bloc.dart';
 import '../bloc/watches_event.dart';
 import '../bloc/watches_state.dart';
 import '../widgets/card/watch_card.dart';
+import '../constants/strings.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,7 +14,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Watches'),
+        title: const Text(Strings.watches),
       ),
       drawer: Drawer(
         child: Column(
